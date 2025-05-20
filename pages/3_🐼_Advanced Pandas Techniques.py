@@ -12,7 +12,7 @@ st.markdown(
 - Creating Pivot Tables
 - Joining DataFrames
 - Reshaping Data: melt (Comming soon)
-- Concatenating and Appending DataFrames (Comming soon)
+- Concatenating and Appending DataFrames
 
 """
 )
@@ -89,3 +89,23 @@ merged_df = pd.merge(df1, df2, left_on='User_ID', right_on='ID')
 
 
 """)
+
+st.subheader("Concatenating and Appending DataFrames")
+st.code(
+"""
+import pandas as pd
+
+# Sample dataframes
+df1 = pd.DataFrame({"A": [1, 2], "B": ["a", "b"]})
+df2 = pd.DataFrame({"A": [3, 4], "B": ["c", "d"]})
+
+# Concatenate vertically (stack rows)
+df_concat = pd.concat([df1, df2], ignore_index=True)
+
+# Concatenate horizontally (add columns)
+df_concat_columns = pd.concat([df1, df2], axis=1)
+
+# Append (DEPRECATED in pandas 2.0+ for DataFrames — use concat instead)
+df_appended = df1.append(df2, ignore_index=True)
+"""
+)
