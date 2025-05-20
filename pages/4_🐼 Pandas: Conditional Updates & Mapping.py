@@ -3,7 +3,7 @@
 #                         Data Manipulation 3 
 # -------------------------------------------------------------------
 import streamlit as st
-st.header("🐼 Data Transformation with Pandas")
+st.header("🐼 Pandas: Conditional Updates & Mapping")
 st.divider()
 st.subheader("Topics Covered:")
 st.markdown(
