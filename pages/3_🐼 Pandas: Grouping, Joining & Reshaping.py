@@ -2,7 +2,7 @@
 #                         Data Manipulation 2 
 # -------------------------------------------------------------------
 import streamlit as st
-st.header("🐼 Advanced Pandas Techniques")
+st.header("🐼 Pandas: Grouping, Joining & Reshaping")
 st.divider()
 st.subheader("Topics Covered:")
 st.markdown(
