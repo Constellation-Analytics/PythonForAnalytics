@@ -2,7 +2,7 @@
 #                         Regular Expressions 
 # -------------------------------------------------------------------
 import streamlit as st
-st.header("🔍 Working with Regular Expressions")
+st.header("🔡 Regular Expressions (Regex)")
 st.divider()
 st.subheader("Topics Covered:")
 st.markdown(
