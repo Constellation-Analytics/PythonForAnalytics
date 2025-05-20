@@ -21,7 +21,9 @@ st.code("""
 from sqlalchemy import create_engine
 
 # Replace with your actual PostgreSQL credentials
-engine = create_engine("postgresql+psycopg2://username:password@localhost:5432/my_database")
+engine = create_engine(
+"postgresql+psycopg2://username:password@localhost:5432/my_database"
+)
 """)
 
 # Reading data from PostgreSQL into pandas
@@ -31,7 +33,9 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # Connect to PostgreSQL
-engine = create_engine("postgresql+psycopg2://username:password@localhost:5432/my_database")
+engine = create_engine(
+"postgresql+psycopg2://username:password@localhost:5432/my_database"
+)
 
 # Read all records from the 'sales' table
 df = pd.read_sql("SELECT * FROM sales", engine)
@@ -46,7 +50,9 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # Connect to PostgreSQL
-engine = create_engine("postgresql+psycopg2://username:password@localhost:5432/my_database")
+engine = create_engine(
+"postgresql+psycopg2://username:password@localhost:5432/my_database"
+)
 
 # Create a sales DataFrame
 data = {
@@ -67,7 +73,9 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # Connect to PostgreSQL
-engine = create_engine("postgresql+psycopg2://username:password@localhost:5432/my_database")
+engine = create_engine(
+"postgresql+psycopg2://username:password@localhost:5432/my_database"
+)
 
 # New sales data to append
 new_data = {
@@ -88,7 +96,9 @@ st.code("""
 from sqlalchemy import create_engine, text
 
 # Connect to PostgreSQL
-engine = create_engine("postgresql+psycopg2://username:password@localhost:5432/my_database")
+engine = create_engine(
+"postgresql+psycopg2://username:password@localhost:5432/my_database"
+)
 
 # Run a raw SQL query to count rows in the 'sales' table
 with engine.connect() as connection:
