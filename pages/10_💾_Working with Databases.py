@@ -58,7 +58,7 @@ df_new.to_sql("sales", engine, if_exists="append", index=False)
 """)
 
 # Optional: Executing raw SQL
-st.subheader("Executing Raw SQL Queries (Optional)")
+st.subheader("Executing Raw SQL Queries")
 st.code("""
 with engine.connect() as connection:
     result = connection.execute("SELECT COUNT(*) FROM sales")
