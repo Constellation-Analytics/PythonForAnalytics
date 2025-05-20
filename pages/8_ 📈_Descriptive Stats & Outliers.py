@@ -2,7 +2,7 @@
 #                         Statistical Analysis
 # -------------------------------------------------------------------
 import streamlit as st
-st.header("📈 Statistical Analysis")
+st.header("📈 Descriptive Stats & Outliers")
 st.divider()
 st.subheader("Topics Covered:")
 st.markdown(
