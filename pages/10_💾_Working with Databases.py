@@ -9,7 +9,7 @@ st.markdown(
 """
 - Setting up a PostgreSQL engine with SQLAlchemy  
 - Reading SQL data into pandas  
-- Writing pandas DataFrames to a PostgreSQL table  
+- Writing pandas DataFrames to a table  
 - Appending to existing tables  
 - Executing raw SQL queries  
 """
