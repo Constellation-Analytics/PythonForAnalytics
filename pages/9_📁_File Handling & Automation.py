@@ -3,7 +3,7 @@
 #                         Files and Automation
 # -------------------------------------------------------------------
 import streamlit as st
-st.header("🤖 Files and Automation")
+st.header("📁 File Handling & Automation")
 st.divider()
 st.subheader("Topics Covered:")
 st.markdown(
