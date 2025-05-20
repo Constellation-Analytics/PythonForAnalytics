@@ -1,5 +1,5 @@
 import streamlit as st
-st.header("🐼 Data Manipulation with Pandas")
+st.header("🐼 Pandas Basics: Loading & Managing Data")
 st.divider()
 st.subheader("Topics Covered:")
 st.markdown(
