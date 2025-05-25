@@ -16,7 +16,7 @@ if query:
         for i, line in enumerate(lines):
             if query.lower() in line.lower():
                 file_name = file_path.name
-                clean_name = file_name[2:-3]  # removes first 2 and last 3 chars
+                clean_name = file_name[:-3]  # removes last 3 chars
                 st.markdown(f"**Module:** `{clean_name}`")
                 st.code("... " + line.strip() + " ...", language="python")
                 results_found = True
