@@ -33,16 +33,11 @@ jobs:
 
       - name: 🛠 Install ChromeDriver
         run: |
-          CHROME_VERSION=$(curl -sS https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json \
-              | grep -A 10 "linux64" \
-              | grep "version" \
-              | head -1 \
-              | grep -oP '\d+\.\d+\.\d+\.\d+')
-          wget -N https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${CHROME_VERSION}/linux64/chromedriver-linux64.zip -O chromedriver.zip
-          unzip chromedriver.zip
-          sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
-          chmod +x /usr/local/bin/chromedriver
-          chromedriver --version
+          actions/checkout@v2
+          nanasess/setup-chromedriver@v2
+          export DISPLAY=:99
+          chromedriver --url-base=/wd/hub &
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
 
       - name: 🚀 Run wake-up script
         run: |
