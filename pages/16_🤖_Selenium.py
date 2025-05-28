@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Streamlit Header
-st.header("🧪 Selenium – Web Automation & Scraping")
+st.header("🤖 Selenium – Web Automation & Scraping")
 st.divider()
 
 # Introduction
