@@ -12,7 +12,7 @@ WAKEUP_BUTTONS = [
 
 # --- SETUP CHROME DRIVER ---
 options = Options()
-options.add_argument("--headless")  # Remove this to see browser activity
+options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--window-size=1920,1080")
@@ -21,7 +21,7 @@ driver = webdriver.Chrome(options=options)
 
 try:
     driver.get(URL)
-    time.sleep(5)  # Let the page load
+    time.sleep(5)  
 
     # --- CHECK FOR WAKEUP BUTTON ---
     wake_button = None
@@ -35,8 +35,18 @@ try:
     if wake_button:
         driver.execute_script("arguments[0].click();", wake_button)
         print("✅ App was asleep. Wake-up button clicked.")
+
+        # Wait for app to reload
+        print("⏳ Waiting for app to reload...")
+        time.sleep(15)  
+
+        # Confirm reload by checking page content
+        page_source = driver.page_source
+        if "streamlit" in page_source.lower() or "data-testid" in page_source.lower():
+            print("✅ Reload success. App content is visible.")
+        else:
+            print("❌ Reload failed. App content not detected.")
     else:
-        # --- APP IS AWAKE: simulate a tiny action ---
         print("✅ App is already awake. Performing light interaction.")
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight/4);")
         time.sleep(2)
