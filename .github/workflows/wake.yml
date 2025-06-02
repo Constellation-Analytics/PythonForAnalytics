@@ -1,8 +1,8 @@
 name: Keep Streamlit App Awake
 
 on:
-  #schedule:
-  #  - cron: '0 */12 * * *'  # Every 12 hours
+  # schedule:
+  #   - cron: '0 */12 * * *'  # Every 12 hours
   workflow_dispatch:
 
 jobs:
@@ -18,10 +18,17 @@ jobs:
       with:
         python-version: '3.11'
 
-    - name: Install dependencies
+    - name: Install Chrome
+      uses: browser-actions/setup-chrome@v1
+
+    - name: Install ChromeDriver
+      uses: nanasess/setup-chromedriver@v2
+      with:
+        chromedriver-version: 'latest'
+
+    - name: Install Python dependencies
       run: |
         pip install -r requirements.txt
 
-    - name: Run wake up script
-      run: |
-        python "python wake_up.py"
+    - name: Run wake-up script
+      run: python wake_up.py
