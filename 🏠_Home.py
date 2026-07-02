@@ -54,11 +54,11 @@ with st.form("coder",border=False):
     
     # Syntax Highlighting with Streamlit-Code
     code_snippet = '''
-    # Example: A simple Streamlit app
-    import streamlit as st
+# Example: A simple Streamlit app
+import streamlit as st
       
-    st.title("Hello, Streamlit!")
-    st.write("This is a simple example of a Streamlit app.")
+st.title("Hello, Streamlit!")
+st.write("This is a simple example of a Streamlit app.")
 
     '''
     
